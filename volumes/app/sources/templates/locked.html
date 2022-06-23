@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+	<div class="container">
+		<a class="navbar-brand text-white" href="#">Secure Files Sharing</a>
+	</div>
+</nav>
+
+<br>
+<br>
+<br>
+<br>
+	
+
+<form action="/locked/{{ hid }}" method="POST">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-4 offset-md-4">
+				<div class="card text-center card  bg-default mb-3">
+					<div class="card-header">
+					LOCKED
+					</div>
+					<div class="card-body">
+						<input type="password" name="password" class="form-control input-sm chat-input" placeholder="Password" />
+					</div>
+					<div class="card-footer text-muted">
+						<button class="btn btn-secondary">unlock</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+{% endblock %}

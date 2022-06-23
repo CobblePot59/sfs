@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  app:
+    build: BUILD/app/
+    image: sfs
+    container_name: sfs
+    restart: always
+    volumes: 
+        - ./volumes/app/sources:/opt/sfs/sources
+        - ./volumes/app/files:/opt/sfs/files
+    environment:
+      - URL=http://www.sfs.int
+
+  rp:
+    image: nginx:alpine
+    container_name: sfs-rp
+    restart: always
+    ports:
+      - "80:80"
+      #- "443:443"
+    volumes:
+      - ./volumes/rp/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro
+      #- ./volumes/rp/ssl/www.sfs.int.crt:/etc/ssl/certs/www.sfs.int.crt:ro
+      #- ./volumes/rp/ssl/www.sfs.int.key:/etc/ssl/private/www.sfs.int.key:ro
+    environment:
+      - NGINX_HOST=www.sfs.int

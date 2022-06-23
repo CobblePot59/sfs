@@ -1,0 +1,4 @@
+* * * * * gunicorn wsgi:app
+00 00 * * * find /opt/sfs/files/1/* -mtime +7 -exec rm -rf {} \;
+00 01 * * * find /opt/sfs/files/24/* -mtime +1 -exec rm -rf {} \;
+00 02 * * * find /opt/sfs/files/30/* -mtime +30 -exec rm -rf {} \;
