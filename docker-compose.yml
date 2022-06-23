@@ -10,7 +10,7 @@ services:
         - ./volumes/app/sources:/opt/sfs/sources
         - ./volumes/app/files:/opt/sfs/files
     environment:
-      - URL=http://www.sfs.int
+      - URL=http://www.sfs.int/
 
   rp:
     image: nginx:alpine
