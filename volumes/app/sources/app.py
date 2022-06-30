@@ -99,6 +99,8 @@ def url_redirect(hid):
 
         if finfo.one_dl == 1 and finfo.clicks > 1:
             shutil.rmtree(finfo.fpath)
+            Files.query.filter_by(id = original_id).delete()
+            db.session.commit()
 
         if finfo.fpassword:
             return redirect(url_for('locked', hid = hid))
