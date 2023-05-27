@@ -1,4 +1,4 @@
-from app import db
+from app import app, db
 from datetime import datetime
 
 class Files(db.Model):
@@ -12,4 +12,5 @@ class Files(db.Model):
     clicks = db.Column(db.Integer, default=0, nullable=False)
     created = db.Column(db.DateTime, nullable=False, default=datetime.now(), onupdate=datetime.now())
 
-db.create_all()
+with app.app_context():
+    db.create_all()

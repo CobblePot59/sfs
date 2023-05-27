@@ -6,7 +6,7 @@ services:
     image: sfs
     container_name: sfs
     restart: always
-    volumes: 
+    volumes:
         - ./volumes/app/sources:/opt/sfs/sources
         - ./volumes/app/files:/opt/sfs/files
     environment:

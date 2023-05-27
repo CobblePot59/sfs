@@ -1,7 +1,12 @@
+from datetime import timedelta
+
 SECRET_KEY = 'p4r664ZMVF52Cqbc84ir3H7kt41YM5qq332kjp8BnnMPE9XtD7t4A1G3RC6xzn8s'
+PERMANENT_SESSION_LIFETIME =  timedelta(minutes=15)
+SESSION_COOKIE_SAMESITE = "None"
+SESSION_COOKIE_SECURE = True
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
-SQLALCHEMY_DATABASE_URI = 'sqlite:///db/files.db'
+SQLALCHEMY_DATABASE_URI = 'sqlite:////opt/sfs/sources/db/files.db'
 
 DROPZONE_UPLOAD_ACTION = 'upload'
 #DROPZONE_ALLOWED_FILE_TYPE = 'image'

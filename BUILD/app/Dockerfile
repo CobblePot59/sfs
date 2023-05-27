@@ -1,6 +1,9 @@
-FROM python:3.9-slim
+FROM python:slim-buster
+
 WORKDIR /opt/sfs/sources
-RUN python3 -m pip install gunicorn flask flask-sqlalchemy==2.5.1 flask-dropzone hashids asgiref bcrypt
-ENV GUNICORN_CMD_ARGS="-b 0.0.0.0:80 -w 4"
+
+RUN python3 -m pip install --no-cache-dir gunicorn flask flask-sqlalchemy flask-dropzone hashids aioflask bcrypt asgiref
+
 EXPOSE 80
-CMD ["gunicorn", "wsgi:app"]
+
+CMD ["gunicorn", "wsgi:app", "--bind=0.0.0.0:80", "--workers=4", "--reload"]
