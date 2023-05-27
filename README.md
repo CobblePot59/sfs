@@ -1,4 +1,4 @@
-# sfs-ldap
+# sfs
 Secure Files Sharing like [lufi](https://framagit.org/fiat-tux/hat-softwares/lufi) but without dependances.
 
 ## Preview
