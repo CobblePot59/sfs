@@ -7,7 +7,6 @@ app = Flask(__name__)
 app.config.from_pyfile('config.py')
 
 db = SQLAlchemy(app)
-from models import *
 
 dropzone = Dropzone(app)
 hashids = Hashids(min_length=64, salt=app.config['SECRET_KEY'])
